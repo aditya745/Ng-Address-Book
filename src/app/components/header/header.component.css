@@ -1,0 +1,17 @@
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.btn-container button {
+    padding: 0 5px 0 5px; 
+    margin-top: 10px;
+}

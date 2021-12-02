@@ -1,0 +1,22 @@
+<div class="address">
+    <div class="first-letter">
+        <span>{{address.name.charAt(0).toUpperCase()}}</span>
+    </div>
+    <div>
+        <p>Name: {{address.name}}</p>
+        <p>Email: {{address.email}}</p>
+        <p>Address: {{address.address}}</p>
+    </div>
+    <div>
+        <app-button text="edit" (click)="onEdit(address)"></app-button>
+        <app-button text="delete" (click)="onDelete(address)"></app-button>
+    </div>
+</div>
+
+<!--<form #myForm="ngForm">
+    <div>
+        <label>Var 1</label>
+        <input *ngIf="editMode" type="text" name="var1" [(ngModel)]="var1" />
+        <span *ngIf="!editMode">{{var1}}</span>
+    </div>
+</form>-->

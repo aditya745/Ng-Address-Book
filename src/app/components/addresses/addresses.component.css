@@ -1,0 +1,8 @@
+.address-container {
+    max-width: 100vw;
+    border: 2px solid grey;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+
+}
