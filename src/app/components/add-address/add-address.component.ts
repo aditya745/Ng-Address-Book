@@ -11,6 +11,15 @@ import { Address } from '../../Address';
 export class AddAddressComponent implements OnInit {
   @Output() onAddAddress: EventEmitter<Address> = new EventEmitter();
 
+  textBtnConfig = {
+    styles: {
+      padding: '5px 20px',
+      border: '1px solid grey',
+      borderRadius: ' 5px',
+      width: '80%'
+    }
+  };
+
   name!: string;
   email!: string;
   address!: string;

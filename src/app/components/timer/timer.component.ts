@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
 
-   hour: number = 0;
-   minute: number = 0;
-   seconds: number = 0;
-   totalSeconds: number = 0;
+   hour: any = 0;
+   minute: any = 0;
+   seconds: any = 0;
+   totalSeconds: any = 0;
    
 
   constructor() { }
@@ -22,9 +22,13 @@ export class TimerComponent implements OnInit {
     
       const startTimer = () => {
         ++this.totalSeconds;
-        this.hour = Math.floor(this.totalSeconds / 3600);
-        this.minute = Math.floor((this.totalSeconds - this.hour * 3600) / 60);
-        this.seconds = this.totalSeconds - (this.hour * 3600 + this.minute * 60);
+        let hoursResult = Math.floor(this.totalSeconds / 3600);
+        let minutesResult = Math.floor((this.totalSeconds - this.hour * 3600) / 60);
+        let secondsResult = this.totalSeconds - (this.hour * 3600 + this.minute * 60); 
+        
+        this.hour = hoursResult < 10 ? '0' + hoursResult : hoursResult;
+        this.minute = minutesResult < 10 ? '0' + minutesResult : minutesResult;
+        this.seconds = secondsResult < 10 ? '0' + secondsResult : secondsResult;
       }
       intervalId = setInterval(startTimer, 1000);
     }

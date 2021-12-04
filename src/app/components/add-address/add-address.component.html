@@ -2,7 +2,7 @@
     <div class="first-letter">
         <span></span>
     </div>
-    <div>
+    <div class="address-content">
         <p>
             <label for="name">Name: </label>
             <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="Add name" />
@@ -17,7 +17,7 @@
         </p>
     </div>
     <div>
-        <app-button text="save" type="submit"></app-button>
+        <app-button text="save" type="submit" [buttonConfig]="textBtnConfig.styles"></app-button>
     </div>
 </form>
 

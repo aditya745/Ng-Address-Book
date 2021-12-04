@@ -1,5 +1,6 @@
 <div class="address-container">
-    <app-address-item *ngFor="let address of addresses" [address]="address" (onDeleteAddress)="deleteAddress(address)" (onEditAddress)="editAddress(address)"></app-address-item>
+    <app-address-item *ngFor="let address of addresses" [address]="address" (onDeleteAddress)="deleteAddress(address)"
+        (onEditAddress)="editAddress(address)" (onSortAscenidng)="sortAscending()"
+        (onSortDescenidng)="sortDescending()"></app-address-item>
     <app-add-address (onAddAddress)="addAddress($event)"></app-add-address>
 </div>
-

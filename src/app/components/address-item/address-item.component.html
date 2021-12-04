@@ -2,21 +2,40 @@
     <div class="first-letter">
         <span>{{address.name.charAt(0).toUpperCase()}}</span>
     </div>
-    <div>
-        <p>Name: {{address.name}}</p>
-        <p>Email: {{address.email}}</p>
-        <p>Address: {{address.address}}</p>
+    <div class="address-content">
+        <div *ngIf="isEditMode" class="edit">
+            <label>Name: </label>
+            <input type="text" name="name" [(ngModel)] =
+            "address.name"/>
+        </div>
+        
+        <p *ngIf="!isEditMode">Name: {{address.name}}</p>
+
+        <div *ngIf="isEditMode" class="edit">
+            <label >Email: </label>
+            <input type="text" name="email" [(ngModel)] =
+            "address.email"/>
+        </div>
+       
+        <p *ngIf="!isEditMode">Email: {{address.email}}</p>
+
+        <div *ngIf="isEditMode" class="edit">
+            <label>Address: </label>
+            <input type="text" name="address" [(ngModel)] =
+            "address.address"/>
+        </div>
+        
+        <p *ngIf="!isEditMode">Address: {{address.address}}</p>
     </div>
-    <div>
-        <app-button text="edit" (click)="onEdit(address)"></app-button>
-        <app-button text="delete" (click)="onDelete(address)"></app-button>
+    <div class="buttons">
+        <div>
+            <app-button [buttonConfig]="textBtnConfig.styles" *ngIf="!isEditMode" text="edit" (click)="onEditClick()" class="btn-edit"></app-button>
+        </div>
+        <div>
+            <app-button [buttonConfig]="textBtnConfig.styles" *ngIf="isEditMode" text="save" (click)="onEdit(address)"></app-button>
+        </div>
+        <div>
+            <app-button [buttonConfig]="textBtnConfig.styles" text="delete" (click)="onDelete(address)"></app-button>
+        </div>
     </div>
 </div>
-
-<!--<form #myForm="ngForm">
-    <div>
-        <label>Var 1</label>
-        <input *ngIf="editMode" type="text" name="var1" [(ngModel)]="var1" />
-        <span *ngIf="!editMode">{{var1}}</span>
-    </div>
-</form>-->

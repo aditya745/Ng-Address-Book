@@ -31,13 +31,19 @@ export class AddressService {
     const url = `${this.apiUrl}/${address.id}`;
     return this.http.put<Task>(url, address, httpOptions)
   }
-  sort(): Observable<Address[]> {
+  sortAscending(): Observable<Address[]> {
     return this.http.get<Address[]>(this.apiUrl).pipe(
       tap(address => address.sort((a,b) => {
-        if(a.name < b.name) return -1;
-        if(a.name > b.name) return 1;
+        if(a.name < b.name) { return -1; }
         return 0;
-      }))
+    }))
+    );
+  }
+  sortDescending(): Observable<Address[]> {
+    return this.http.get<Address[]>(this.apiUrl).pipe(
+      tap(address => address.sort((a,b) => {
+        return (a.name > b.name ? -1 : 1);
+    }))
     );
   }
 }

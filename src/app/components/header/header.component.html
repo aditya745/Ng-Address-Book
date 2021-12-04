@@ -2,9 +2,9 @@
     <h1>{{title}}</h1>
     <app-timer></app-timer>
     <div class="btn-container">
-        <app-button text="{{showAddAddress ? 'Close Address Item' : 'Add Address Item'}}" (btnClick)="toggleAddForm()" ></app-button>
-        <app-button text="A-Z"></app-button>
-        <app-button text="Z-A"></app-button>
+        <app-button text="{{showAddAddress ? 'Close Address Item' : 'Add Address Item'}}" (btnClick)="toggleAddForm()">
+        </app-button>
+        <app-button text="A-Z" (click)="onSortAscending()"></app-button>
+        <app-button text="Z-A" (click)="onSortDescending()"></app-button>
     </div>
 </header>
-
